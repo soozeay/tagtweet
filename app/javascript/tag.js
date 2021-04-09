@@ -8,6 +8,9 @@ if (location.pathname.match("tweets/new")){
       //openメソッドの第一引数にHTTPメソッド、第二引数にURL、第三引数には非同期通信
       XHR.responseType = "json";
       XHR.send();
+      XHR.onload = () => {
+        const tagName = XHR.response.keyword;
+      };
     });
   });
 }
